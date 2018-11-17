@@ -1,25 +1,33 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import Projects from './components/Projects';
+import AddCategory from './components/AddCategory';
+import Hoc from './Hoc';
 class App extends Component {
+  constructor(){
+    super();
+    this.state={
+        cats:[
+            {model:"Amaze",maker:"Honda"},
+            {model:"Ciez",maker:"Maruti"},
+            {model:"Terano",maker:"Nissan"},
+            {model:"Duster",maker:"Renault"},
+            {model:"Passat",maker:"Foxwagon"}
+        ]
+    };
+
+} AddCategory(category){
+  let { cats }=this.state;
+  cats.push(category)
+  this.setState({cats:cats});
+}
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+          <h1>High Order Component</h1>  <Hoc />
+            <h1>Return data from Child component to Parent</h1>
+            <Projects category={this.state.cats} />
+            <AddCategory addCategory={this.AddCategory.bind(this)}/>
+
       </div>
     );
   }
