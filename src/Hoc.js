@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Location from './components/Location';
 const withSearch = (WrappedComponent) => {
-  return class extends React.Component {
+  return class extends Component {
     state = {
       searchTerm: ''
     }
