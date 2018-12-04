@@ -11,5 +11,5 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
-### React High Order Function
+### Search Implement with High Order Function in React JS
 ### How to receive data from Child to Parent Component.
